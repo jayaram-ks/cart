@@ -20,3 +20,15 @@
 {
   float:right;
 }
+.adm-product-paging
+{
+   justify-content:center;
+}
+.t-c
+{
+  text-align:center;
+}
+.adm-product-paging .active
+{
+  box-shadow: none !important;
+}
