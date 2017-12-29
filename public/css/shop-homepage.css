@@ -1,0 +1,31 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+a:hover{
+  text-decoration: none;
+}
+.navbar-brand
+{
+  background-image: url('/images/logo.png');
+  width:120px;
+  height:30px;
+  background-repeat: no-repeat;
+}
+
+.navbar-form .input-group
+{
+  width:100% !important;
+
+}
+.slider-img{
+
+  max-height:350px !important;
+  width: 900px;
+
+}
+.product-paging
+{
+   justify-content:center;
+}

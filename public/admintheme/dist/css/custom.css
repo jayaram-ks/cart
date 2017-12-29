@@ -1,0 +1,22 @@
+.cust-error
+{
+    color: #F00;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px;
+}
+.cust-green
+{
+    color: #0f0;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px;
+}
+.fl
+{
+  float:left;
+}
+.fr
+{
+  float:right;
+}
