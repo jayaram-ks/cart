@@ -38,18 +38,7 @@ class Helper
         return $list;
     }
 
-    public static function categOptions($arr)
-    {
-       foreach($arr as $v)
-       {
-
-         if(count( $v['childs'] > 0 ) )
-         {
-            //  foreach()
-         }
-
-       }
-    }
+  
 
 
 }

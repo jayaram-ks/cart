@@ -103,6 +103,16 @@ return [
         'password' => [
             'required' => 'Please enter a password',
         ],
+        'prod_image.*' =>[
+
+            'image' => 'Product image should be a valid image.',
+            'mimes' => 'Only jpeg,png and bmp images are allowed.',
+            'max'   => 'Sorry! Maximum allowed size for an image is 5MB'
+          ],
+
+
+        
+
     ],
 
     /*
@@ -116,6 +126,6 @@ return [
     |
     */
 
-    'attributes' => ['firstname'=>'First Name','lastname'=>'Last Name','email'=>'E-mail Address','password'=>'Password','profimage'=>'Image'],
+    'attributes' => ['firstname'=>'First Name','lastname'=>'Last Name','email'=>'E-mail Address','password'=>'Password','profimage'=>'Image','prod_image'=>"product's image"],
 
 ];

@@ -77,10 +77,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-       
+
         $img = $data['profimage'];
         $imagename = time().'.'.$img->getClientOriginalExtension();
-        
+
 
         $user = User::create([
             'name' => $data['firstname'],
@@ -91,7 +91,7 @@ class RegisterController extends Controller
             'country' => $data['country'],
             'profileimage' => $imagename
         ]);
-        Storage::disk('uploads')->put($user->id."/".$imagename,File::get($img));
+        Storage::disk('uploads')->put(config('constants.folder.user').$user->id."/".$imagename,File::get($img));
         return $user;
     }
 }

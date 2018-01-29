@@ -1,0 +1,50 @@
+<md-dialog class="w-50">
+    <form ng-cloak name="prodForm" novalidate>
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Create New Product</h2>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+
+                <!-- we are using ng-model to bind this view and the 'product model -->
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input type="text" ng-minlength="6" ng-maxlength="12" ng-pattern="/^\w+$/" required   name="name" ng-model="prd.name">
+
+                    <div ng-messages="prodForm.name.$error">
+                      <p ng-message="minlength">Product name should have at least 6 characters.</p>
+                      <p ng-message="maxlength">Product name should have at most 12 characters.</p>
+                      <p ng-message="required">Product name is mandatory.</p>
+                      <p ng-message="pattern">Username can only be alphanumeric with an optional underscore.</p>
+                    </div>
+
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Description</label>
+                    <input type="text" name="description" required ng-model="prd.description">
+
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Price</label>
+                    <input type="number" name="price" required ng-model="prd.price">
+
+                </md-input-container>
+
+
+
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancel()" class="md-warn">Cancel</md-button>
+            <md-button ng-click="reset()" class="md-warn">Reset</md-button>
+            <md-button  ng-click="prodForm.$valid && createProduct()" class="md-primary">Create</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

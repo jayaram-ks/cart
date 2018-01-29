@@ -29,3 +29,38 @@ a:hover{
 {
    justify-content:center;
 }
+.card-title a
+{
+  font-size:14px;
+  font-weight:normal;
+  letter-spacing: -0.3px;
+  color:#000;
+}
+.price-list
+{
+    color:#00F;
+}
+.price-unit
+{
+  font-size: 13px;
+}
+.product-image
+{
+  width:350px;
+}
+.product-desc
+{
+  font-size: 14px !important;
+}
+.sell-box
+{
+  font-size:13px;
+}
+.product-brief
+{
+  font-size: 12px;
+}
+.brief-title
+{
+  font-size: 14px;
+}

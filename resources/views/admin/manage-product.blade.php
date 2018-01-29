@@ -8,6 +8,9 @@
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
+                    @if(session('success'))
+                    <span class="cust-green">{{session('success')}}</span>
+                    @endif
                     <table id="example1" class="table table-bordered table-striped">
                       <thead>
                       <tr>
@@ -25,7 +28,20 @@
                           <td>{{$prd->title}}</td>
                           <td>{{config('constants.cur.default')." ".$prd->price}}</td>
                           <td>{{words($prd->description, 5,'....')}}</td>
-                          <td>Edit | Delete</td>
+                          <td>
+                          <span class="col-md-6 t-c">
+                            <a href="" class="btn btn-primary btn-sm ">Edit</a>
+                          </span>
+                          <span class="col-md-6 t-c">
+                           <form   method="post" action="{{route('admin.deleteproduct',['id' => $prd->id ])}}">
+                             {{ method_field('delete') }} {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary btn-sm fr" value="Delete">
+                          </form>
+                        </span>
+
+
+
+                          </td>
                         </tr>
                         @endforeach
                       </tbody>

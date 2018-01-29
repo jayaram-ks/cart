@@ -19,8 +19,8 @@ class CategoryController extends Controller
     {
       $categoryTree = Helper::getCategories();
       $categories = Category::all();
+      //$ar = Helper::getParentChilds();
 
-      //pr($categoryTree);
       //exit;
 
       //pr(Helper::categOptions($categoryTree));

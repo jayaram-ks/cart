@@ -16,7 +16,7 @@
 
               @foreach($slides as $sld)
               <div class="carousel-item  {{ $loop->first  ? 'active': '' }} ">
-                <img  class="d-block img-fluid slider-img" src="{{asset('images/'.$sld->imagePath)}}" alt="">
+                <img  class="d-block img-fluid slider-img" src="{{url(config('constants.prodimg').$sld->id.'/l_'.$sld->image->filename) }}" alt="">
               </div>
               @endforeach
 
@@ -33,15 +33,16 @@
 
           <div class="row">
             @foreach($products as $prod)
+
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="{{asset('images/'.$prod->imagePath)}}" alt=""></a>
+                <a href="#"><img   class="card-img-top pt-3" src="{{url(config('constants.prodimg').$prod->id.'/m_'.$prod->image->filename) }}" alt=""></a>
                 <div class="card-body">
                   <h5 class="card-title">
                     <a href="#">{{$prod->title}}</a>
                   </h5>
-                  <h5>AED {{$prod->price}}</h5>
-                <button class="btn btn-primary text-center  w-100 btn-sm">Product Details</button>
+                  <h5 class='price-list'> {{$prod->price}} <span class='price-unit'>AED</span></h5>
+                <a href="{{route('user.showproduct',['slug'=> $prod->slug])}}" class="btn btn-primary text-center text-white  w-100 btn-sm">Product Details</a>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -55,7 +56,7 @@
 
 
             {{$products->links('pagination.default')}}
-        
+
 
         </div>
         <!-- /.col-lg-9 -->

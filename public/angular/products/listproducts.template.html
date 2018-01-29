@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-block p-0">
+    <div class="card-title bg-primary text-white">
+      <div class="row">
+        <div class='col-md-3 text-center h4 p-2' >MANAGE PRODUCTS</div>
+        <div class='col-md-7'></div>
+        <div class='col-md-2'><md-button class="md-raised" ng-click="showCreateProductForm()">Create Product</md-button></div>
+      </div>
+
+    </div>
+
+    <table class='small  table table-striped'>
+      <tr>
+        <thead>
+            <tr>
+              <td>SERIAL NO</td>
+              <td style="cursor:pointer" ng-click = "sortType = 'id'">#ID</td>
+              <td>IMAGE</td>
+              <td style="cursor:pointer" ng-click = "sortType = 'title'">TITLE</td>
+              <td style="cursor:pointer" ng-click = "sortType = 'price'">PRICE(AED)</td>
+              <td style="cursor:pointer" ng-click = "sortType = 'description'" >DESCRIPTION </td>
+              <td></td>
+              <td>ACTIONS</td>
+              <td></td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat = "x in prod | orderBy:sortType:sortReverse" >
+            <td>{{ $index+1 }}</td>
+            <td><img src="{{x.images}}"></td>
+            <td>{{ x.id }}</td>
+            <td>{{ x.title }}</td>
+            <td>{{ x.price}}</td>
+            <td>{{ x.description }}</td>
+            <td>
+              <md-button class="md-raised md-info" ng-click="readOneProduct(x.id)">VIEW</md-button>
+            </td>
+            <td>
+              <md-button class="md-raised md-primary" ng-click="showUpdateProductForm(x.id)">EDIT</md-button>
+            </td>
+            <td>
+              <md-button class="md-raised md-warn" ng-click="confirmDeleteProduct($event,x.id)">DELETE</md-button>
+            </td>
+        </tr>
+      </tbody>
+      <tfoot>
+      </tfoot>
+      </tr>
+  </table>
+
+  </div>
+</div>

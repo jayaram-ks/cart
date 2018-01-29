@@ -17,6 +17,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/product/{slug}','ProductController@showProduct')->name('user.showproduct');
 Route::get('/logout','Auth\LoginController@userLogout')->name('user.logout');
 
 //Admin
@@ -32,6 +33,8 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::get('/product','Admin\ProductController@manageProduct')->name('admin.manageproduct');
 	Route::get('/addproduct','Admin\ProductController@addProduct')->name('admin.addproduct');
+	Route::post('/addproduct','Admin\ProductController@saveProduct')->name('admin.saveproduct');
+	Route::delete('/product/{id}','Admin\ProductController@destroy')->name('admin.deleteproduct');
 
 
 

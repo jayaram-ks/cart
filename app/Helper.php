@@ -25,4 +25,5 @@ if (! function_exists('words')) {
         return \Illuminate\Support\Str::words($value, $words, $end);
     }
 }
+
 ?>
